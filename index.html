@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Skywave — Watch free live TV from around the world</title>
+  <meta name="description" content="Watch 11,000+ free live TV channels from 180 countries in your browser. Pick a country or go worldwide: news, sports, music, kids and more.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="author" content="Mursleen">
+  <meta name="theme-color" content="#0E0F11">
+  <meta name="color-scheme" content="dark">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="icon-192.png" type="image/png" sizes="192x192">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="manifest.webmanifest">
+
+  <!-- Link previews (WhatsApp, Facebook, LinkedIn, X). Once the site has a domain:
+       make og:image and twitter:image absolute (https://your-domain/og-image.png), and add og:url and <link rel="canonical">. -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Skywave">
+  <meta property="og:title" content="Skywave — Watch free live TV from around the world">
+  <meta property="og:description" content="11,000+ free live TV channels from 180 countries, in your language. No sign-up, nothing to install.">
+  <meta property="og:image" content="og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Skywave logo with the line: Free live TV from around the world">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Skywave — Watch free live TV from around the world">
+  <meta name="twitter:description" content="11,000+ free live TV channels from 180 countries, in your language. No sign-up, nothing to install.">
+  <meta name="twitter:image" content="og-image.png">
+  <meta name="twitter:image:alt" content="Skywave logo with the line: Free live TV from around the world">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Skywave",
+  "description": "Watch 11,000+ free live TV channels from 180 countries in your browser. Pick a country or go worldwide: news, sports, music, kids and more.",
+  "applicationCategory": "MultimediaApplication",
+  "operatingSystem": "Any (web browser)",
+  "browserRequirements": "Requires JavaScript",
+  "inLanguage": "en",
+  "isAccessibleForFree": true,
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "creator": {
+    "@type": "Person",
+    "name": "Mursleen",
+    "url": "https://www.linkedin.com/in/mursleen-amjad/"
+  }
+}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://iptv-org.github.io" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600&text=skywave&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sw-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6A8BF0"/><stop offset="1" stop-color="#3457C8"/></linearGradient>
+    <clipPath id="sw-clip"><circle cx="32" cy="32" r="30"/></clipPath>
+  </defs>
+  <!-- Logo: a signal riding the curve of the planet and fading over the horizon (a skywave). -->
+  <symbol id="logo-mark" viewBox="0 0 64 64">
+    <g clip-path="url(#sw-clip)">
+      <rect width="64" height="64" fill="url(#sw-sky)"/>
+      <circle cx="14" cy="100" r="64" fill="#172554"/>
+      <path d="M5 29C7.5 21 8.5 15.6 12 15.6C17 15.6 19 34.1 24 34.1C29 34.1 31 21.2 36 21.2C41 21.2 43 39.1 48 39.1C53 39.1 55 37 59.5 39C62.5 40.4 64.5 46 67 50" fill="none" stroke="#F28500" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+  </symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h10"/></symbol>
+  <symbol id="i-sidebar" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M9.5 4v16"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z"/></symbol>
+  <symbol id="i-pause" viewBox="0 0 24 24"><rect x="6" y="5" width="4" height="14" rx="1.2"/><rect x="14" y="5" width="4" height="14" rx="1.2"/></symbol>
+  <symbol id="i-volume" viewBox="0 0 24 24"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></symbol>
+  <symbol id="i-mute" viewBox="0 0 24 24"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="m16 9 6 6M22 9l-6 6"/></symbol>
+  <symbol id="i-expand" viewBox="0 0 24 24"><path d="M4 9V5a1 1 0 0 1 1-1h4M15 4h4a1 1 0 0 1 1 1v4M20 15v4a1 1 0 0 1-1 1h-4M9 20H5a1 1 0 0 1-1-1v-4"/></symbol>
+  <symbol id="i-shrink" viewBox="0 0 24 24"><path d="M9 4v4a1 1 0 0 1-1 1H4M20 9h-4a1 1 0 0 1-1-1V4M15 20v-4a1 1 0 0 1 1-1h4M4 15h4a1 1 0 0 1 1 1v4"/></symbol>
+  <symbol id="i-pip" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5"/><rect x="12" y="11.5" width="6.5" height="5" rx="1"/></symbol>
+  <symbol id="i-chevron-down" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+  <symbol id="i-chevron-left" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></symbol>
+  <symbol id="i-chevron-right" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+  <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5.5M12 7.6h.01"/></symbol>
+  <symbol id="i-prev" viewBox="0 0 24 24"><path d="M18 19 8 12l10-7z"/><path d="M5.5 5v14"/></symbol>
+  <symbol id="i-next" viewBox="0 0 24 24"><path d="m6 5 10 7-10 7z"/><path d="M18.5 5v14"/></symbol>
+  <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-2.34-5.66"/><path d="M20 4v5h-5"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7.5V13M12 16.5h.01"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+  <symbol id="i-grid" viewBox="0 0 24 24"><rect x="4" y="4" width="6.5" height="6.5" rx="1.8"/><rect x="13.5" y="4" width="6.5" height="6.5" rx="1.8"/><rect x="4" y="13.5" width="6.5" height="6.5" rx="1.8"/><rect x="13.5" y="13.5" width="6.5" height="6.5" rx="1.8"/></symbol>
+</svg>
+
+<div class="app" id="app">
+
+  <header class="topbar">
+    <button class="icon-btn" id="sidebarToggle" type="button" aria-label="Toggle channel list" aria-controls="sidebar" aria-expanded="true">
+      <svg class="ic"><use href="#i-sidebar"/></svg>
+    </button>
+    <a class="brand" href="./" aria-label="Skywave home">
+      <svg class="brand-mark" aria-hidden="true"><use href="#logo-mark"/></svg>
+      <span class="brand-word">skywave</span>
+    </a>
+    <div class="topbar-spacer"></div>
+    <button class="icon-btn kbd-help" type="button" popovertarget="shortcuts" aria-label="Keyboard shortcuts" title="Keyboard shortcuts (?)">
+      <svg class="ic"><use href="#i-info"/></svg>
+    </button>
+    <button class="region-pill" id="regionPill" type="button" aria-haspopup="dialog">
+      <span class="region-flag flag" id="regionFlag"><svg class="ic"><use href="#i-globe"/></svg></span>
+      <span class="region-text">
+        <span class="region-country" id="regionCountry">Choose country</span>
+        <span class="region-langs" id="regionLangs">Pick your playlist</span>
+      </span>
+      <svg class="ic region-chev"><use href="#i-chevron-down"/></svg>
+    </button>
+  </header>
+
+  <aside class="sidebar" id="sidebar" aria-label="Channels">
+    <div class="drawer-head">
+      <span class="drawer-title">Channels</span>
+      <button class="icon-btn" id="drawerClose" type="button" aria-label="Close channel list"><svg class="ic"><use href="#i-x"/></svg></button>
+    </div>
+    <div class="sidebar-head">
+      <label class="search">
+        <svg class="ic"><use href="#i-search"/></svg>
+        <input id="search" type="search" placeholder="Search channels" autocomplete="off" spellcheck="false" aria-label="Search channels">
+        <kbd>/</kbd>
+      </label>
+      <div class="tabs" role="tablist" aria-label="Channel view">
+        <button class="tab is-active" type="button" role="tab" data-view="all" aria-selected="true">All <span class="tab-count" id="countAll">0</span></button>
+        <button class="tab" type="button" role="tab" data-view="favorites" aria-selected="false"><svg class="ic"><use href="#i-star"/></svg>Favorites <span class="tab-count" id="countFav">0</span></button>
+      </div>
+      <div class="groupby" id="groupBy" role="group" aria-label="Group channels by" hidden>
+        <span class="groupby-label">Group by</span>
+        <button class="seg" type="button" data-group-by="country" aria-pressed="true"><svg class="ic"><use href="#i-globe"/></svg>Country</button>
+        <button class="seg" type="button" data-group-by="category" aria-pressed="false"><svg class="ic"><use href="#i-grid"/></svg>Category</button>
+      </div>
+    </div>
+    <div class="channel-scroll" id="channelScroll">
+      <div class="channel-list" id="channelList"></div>
+    </div>
+  </aside>
+  <div class="scrim" id="scrim" hidden></div>
+
+  <main class="main" id="main">
+    <noscript><p class="noscript">Skywave needs JavaScript to play live TV. Turn it on in your browser settings, then reload the page.</p></noscript>
+    <div class="stage">
+      <div class="player-shell">
+        <section class="player" id="player" data-state="idle" tabindex="-1" aria-label="Video player">
+          <video id="video" playsinline preload="none"></video>
+
+          <div class="overlay overlay-idle">
+            <div class="glass-card">
+              <svg class="idle-mark" aria-hidden="true"><use href="#logo-mark"/></svg>
+              <h1 class="idle-title">Live TV, in your language.</h1>
+              <p class="idle-sub" id="idleSub">Choose your country to load channels in its languages.</p>
+              <div class="idle-actions" id="idleActions"></div>
+            </div>
+          </div>
+
+          <div class="overlay overlay-loading" aria-live="polite">
+            <div class="glass-card">
+              <div class="tuner">
+                <div class="tuner-ring"></div>
+                <span class="logo tuner-logo" id="loadingLogo"></span>
+              </div>
+              <p class="loading-text" id="loadingText">Tuning in…</p>
+            </div>
+          </div>
+
+          <div class="overlay overlay-error" role="alert">
+            <div class="glass-card">
+              <span class="error-icon"><svg class="ic"><use href="#i-alert"/></svg></span>
+              <h2 class="error-title" id="errorTitle">This channel isn't available</h2>
+              <p class="error-text" id="errorText"></p>
+              <div class="error-actions">
+                <button class="btn btn-primary" type="button" data-action="retry"><svg class="ic"><use href="#i-refresh"/></svg>Try again</button>
+                <button class="btn btn-ghost" type="button" data-action="next"><svg class="ic"><use href="#i-next"/></svg>Next channel</button>
+              </div>
+            </div>
+          </div>
+
+          <button class="big-play" id="bigPlay" type="button" aria-label="Play"><svg class="ic ic-fill"><use href="#i-play"/></svg></button>
+          <button class="unmute" id="unmute" type="button" hidden><svg class="ic"><use href="#i-mute"/></svg>Tap for sound</button>
+
+          <div class="player-top">
+            <span class="logo pt-logo" id="ptLogo"></span>
+            <div class="pt-text">
+              <div class="pt-name" id="ptName"></div>
+              <div class="pt-meta" id="ptMeta"></div>
+            </div>
+          </div>
+
+          <div class="controls">
+            <button class="ctl ctl-play" id="ctlPlay" type="button" aria-label="Pause (K)"><svg class="ic ic-fill"><use href="#i-pause"/></svg></button>
+            <button class="ctl" id="ctlPrev" type="button" aria-label="Previous channel (P)"><svg class="ic"><use href="#i-prev"/></svg></button>
+            <button class="ctl" id="ctlNext" type="button" aria-label="Next channel (N)"><svg class="ic"><use href="#i-next"/></svg></button>
+            <div class="volume">
+              <button class="ctl" id="ctlMute" type="button" aria-label="Mute (M)"><svg class="ic"><use href="#i-volume"/></svg></button>
+              <input id="ctlVolume" type="range" min="0" max="1" step="0.05" value="1" aria-label="Volume">
+            </div>
+            <span class="ctl-spacer"></span>
+            <button class="ctl" id="ctlPip" type="button" aria-label="Picture in picture" hidden><svg class="ic"><use href="#i-pip"/></svg></button>
+            <button class="ctl" id="ctlFullscreen" type="button" aria-label="Full screen (F)"><svg class="ic"><use href="#i-expand"/></svg></button>
+          </div>
+        </section>
+      </div>
+
+      <section class="now" id="now" hidden>
+        <span class="logo now-logo" id="nowLogo"></span>
+        <div class="now-info">
+          <span class="eyebrow"><span class="eyebrow-dot"></span><span id="nowEyebrow">Now playing</span></span>
+          <h2 class="now-title" id="nowTitle"></h2>
+          <div class="tags" id="nowTags"></div>
+        </div>
+        <button class="btn btn-glow now-fav" id="nowFav" type="button" aria-pressed="false" aria-label="Favorite"><svg class="ic"><use href="#i-star"/></svg><span>Favorite</span></button>
+      </section>
+    </div>
+
+    <section class="rail-section" id="railSection" hidden>
+      <div class="section-head">
+        <div class="section-title"><h2 id="railTitle">More channels</h2><span id="railCount"></span></div>
+        <div class="rail-nav" id="railNav">
+          <button class="rail-btn" id="railPrev" type="button" aria-label="Scroll channels left"><svg class="ic"><use href="#i-chevron-left"/></svg></button>
+          <button class="rail-btn" id="railNext" type="button" aria-label="Scroll channels right"><svg class="ic"><use href="#i-chevron-right"/></svg></button>
+        </div>
+      </div>
+      <div class="rail" id="rail"></div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <a class="footer-logo" href="./" aria-label="Skywave home">
+            <svg class="footer-mark" aria-hidden="true"><use href="#logo-mark"/></svg>
+            <span class="footer-word">skywave</span>
+          </a>
+          <p class="footer-tagline">Free live TV from around the world.</p>
+          <p class="footer-about">Pick your country to see channels in its languages, or browse worldwide by country or by category, from news and sports to music, movies and kids' TV. It runs in your browser, with nothing to install and no sign-up.</p>
+          <p class="footer-stat" id="footerStat" hidden></p>
+        </div>
+
+        <nav class="footer-col" aria-labelledby="footerWatch">
+          <h2 id="footerWatch">Watch</h2>
+          <ul>
+            <li><button class="footer-link" type="button" data-world>Worldwide</button></li>
+            <li><button class="footer-link" type="button" data-action="picker">Choose a country</button></li>
+            <li><button class="footer-link" type="button" data-action="favorites">Your favorites</button></li>
+          </ul>
+        </nav>
+
+        <nav class="footer-col" aria-labelledby="footerHelp">
+          <h2 id="footerHelp">Help</h2>
+          <ul>
+            <li class="desktop-only"><button class="footer-link" type="button" popovertarget="shortcuts">Keyboard shortcuts</button></li>
+            <li><a class="footer-link" id="reportLink" href="#" target="_blank" rel="noopener">Report a channel</a></li>
+            <li><a class="footer-link" href="https://github.com/iptv-org/iptv" target="_blank" rel="noopener">Where channels come from</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="footer-legal">
+        <p>Skywave doesn't host any video. Channels are publicly available streams listed by the open-source iptv-org project and belong to their broadcasters.</p>
+        <div class="footer-credit">
+          <p>© <span id="footerYear">2026</span> Skywave</p>
+          <a class="dev-tag" href="https://www.linkedin.com/in/mursleen-amjad/" target="_blank" rel="noopener author" aria-label="Created by Mursleen, opens LinkedIn profile in a new tab">Created by <b>Mursleen</b></a>
+        </div>
+      </div>
+    </footer>
+  </main>
+</div>
+
+<dialog class="picker" id="picker" aria-labelledby="pickerTitle">
+  <div class="picker-step" id="stepCountry">
+    <header class="picker-head">
+      <div class="picker-head-text">
+        <span class="eyebrow">Step 1 of 2</span>
+        <h2 id="pickerTitle">Where are you watching from?</h2>
+        <p class="picker-sub">Pick a country for channels in its languages, or go Worldwide for everything.</p>
+      </div>
+      <button class="icon-btn" type="button" data-close aria-label="Close"><svg class="ic"><use href="#i-x"/></svg></button>
+    </header>
+    <label class="search search-lg">
+      <svg class="ic"><use href="#i-search"/></svg>
+      <input id="countrySearch" type="search" placeholder="Search countries" autocomplete="off" spellcheck="false" aria-label="Search countries">
+    </label>
+    <div class="suggested" id="suggested" hidden></div>
+    <div class="country-grid" id="countryGrid"></div>
+  </div>
+
+  <div class="picker-step" id="stepLang" hidden>
+    <header class="picker-head">
+      <button class="icon-btn" type="button" id="pickerBack" aria-label="Back to countries"><svg class="ic"><use href="#i-chevron-left"/></svg></button>
+      <div class="picker-head-text">
+        <span class="eyebrow">Step 2 of 2</span>
+        <h2><span class="flag picker-flag" id="pickerFlag"></span> <span id="pickerCountry"></span></h2>
+        <p class="picker-sub">Choose the language playlists to load.</p>
+      </div>
+      <button class="icon-btn" type="button" data-close aria-label="Close"><svg class="ic"><use href="#i-x"/></svg></button>
+    </header>
+    <div class="picker-body">
+      <p class="field-label">Languages</p>
+      <div class="lang-chips" id="langChips"></div>
+      <label class="switch-row">
+        <span class="switch-text">
+          <span class="switch-title" id="onlyTitle">Only channels from this country</span>
+          <span class="switch-sub" id="onlySub">Turn off to see every channel in these languages.</span>
+        </span>
+        <input class="switch" id="onlyCountry" type="checkbox" role="switch" checked>
+      </label>
+    </div>
+    <footer class="picker-foot">
+      <p class="picker-summary" id="pickerSummary">Loading playlists…</p>
+      <button class="btn btn-primary btn-lg" id="pickerApply" type="button" disabled>Watch channels</button>
+    </footer>
+  </div>
+</dialog>
+
+<div class="shortcuts" id="shortcuts" popover aria-labelledby="shortcutsTitle">
+  <h2 id="shortcutsTitle">Keyboard shortcuts</h2>
+  <dl>
+    <div><dt><kbd>K</kbd><kbd>Space</kbd></dt><dd>Play or pause</dd></div>
+    <div><dt><kbd>F</kbd></dt><dd>Full screen</dd></div>
+    <div><dt><kbd>M</kbd></dt><dd>Mute or unmute</dd></div>
+    <div><dt><kbd>N</kbd></dt><dd>Next channel</dd></div>
+    <div><dt><kbd>P</kbd></dt><dd>Previous channel</dd></div>
+    <div><dt><kbd>/</kbd></dt><dd>Search channels</dd></div>
+    <div><dt><kbd>?</kbd></dt><dd>Show this list</dd></div>
+  </dl>
+</div>
+
+<div class="toasts" id="toasts" aria-live="polite"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/hls.js@1.5.20/dist/hls.min.js" defer></script>
+<script src="js/languages.js" defer></script>
+<script src="js/app.js" defer></script>
+</body>
+</html>

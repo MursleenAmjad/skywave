@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Skywave logo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Unbounded:wght@600&display=swap" rel="stylesheet">
+<style>
+  :root { --bg: #0E0F11; --line: rgba(255,255,255,.07); --line-2: rgba(255,255,255,.12); --text: #F2F3F5; --text-2: #A9AFBA; --text-3: #727986; --tang: #F28500; color-scheme: dark; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 500 16px/1.55 "Manrope", system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  main { max-width: 1180px; margin: 0 auto; padding: 56px 32px 96px; }
+  h1 { margin: 0 0 10px; font-size: 34px; font-weight: 800; letter-spacing: -.03em; }
+  .intro { color: var(--text-2); max-width: 62ch; margin: 0 0 40px; }
+  .option { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); border-top: 1px solid var(--line); }
+  .stage { display: grid; place-items: center; min-height: 320px; padding: 40px 24px; }
+  .lockup { display: flex; align-items: center; gap: 20px; }
+  .lockup svg { width: 104px; height: 104px; flex: none; }
+  .wm { font-family: "Unbounded", sans-serif; font-weight: 600; letter-spacing: -.04em; font-size: 70px; line-height: 1; }
+  .facts { padding: 40px 0 40px 40px; display: grid; align-content: center; gap: 20px; }
+  .facts h2 { margin: 0; font-size: 21px; font-weight: 800; letter-spacing: -.02em; display: flex; gap: 12px; align-items: center; }
+  .badge { font-size: 12.5px; font-weight: 700; color: #111; background: var(--tang); padding: 3px 10px; border-radius: 999px; }
+  .facts p { margin: 0; color: var(--text-2); max-width: 46ch; }
+  .sizes { display: flex; align-items: flex-end; gap: 18px; flex-wrap: wrap; }
+  .sizes figure { margin: 0; display: grid; justify-items: center; gap: 8px; }
+  .sizes figcaption { font-size: 12px; color: var(--text-3); }
+  .icon { display: grid; place-items: center; border-radius: 22%; }
+  .icon svg { width: 70%; height: 70%; }
+  .icon.dark { background: #16181C; box-shadow: inset 0 0 0 1px var(--line-2); }
+  .icon.light { background: #F4F5F7; }
+  .home { padding: 10px; border-radius: 16px; background: linear-gradient(160deg, #E9EEF7, #CFD8E8); }
+  .fav { width: 16px; height: 16px; }
+  .tab { display: flex; align-items: center; gap: 8px; height: 32px; padding: 0 12px; border-radius: 8px 8px 0 0; background: #2A2E35; font-size: 12px; color: var(--text-2); }
+  .bar { display: flex; align-items: center; gap: 12px; height: 64px; padding: 0 16px; border-radius: 14px; background: rgba(20,22,25,.9); border: 1px solid var(--line); }
+  .bar .mini { display: flex; align-items: center; gap: 9px; }
+  .bar .mini svg { width: 34px; height: 34px; }
+  .bar .wm { font-size: 20px; }
+  @media (max-width: 860px) {
+    main { padding: 32px 16px 64px; }
+    .option { grid-template-columns: 1fr; }
+    .stage { min-height: 200px; }
+    .lockup svg { width: 60px; height: 60px; }
+    .wm { font-size: 40px; }
+    .facts { padding: 0 0 40px; }
+  }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sw-earth" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5B80F0"/><stop offset="1" stop-color="#2F55C9"/></linearGradient>
+    <linearGradient id="sw-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6A8BF0"/><stop offset="1" stop-color="#3457C8"/></linearGradient>
+  </defs>
+
+  <!-- D. Bounce badge: blue sky, a navy planet curving away, and the signal bouncing over the horizon in shrinking hops. -->
+  <symbol id="sw-badge" viewBox="0 0 64 64">
+    <clipPath id="sw-badge-clip"><circle cx="32" cy="32" r="30"/></clipPath>
+    <g clip-path="url(#sw-badge-clip)">
+      <rect width="64" height="64" fill="url(#sw-sky)"/>
+      <circle cx="14" cy="100" r="64" fill="#172554"/>
+      <path d="M5 36.8Q15.5 -12 26 37.1Q34 7 42 42.4Q48 25 54 50Q57.5 41 61 56.6" fill="none" stroke="#F28500" stroke-width="4.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+  </symbol>
+
+  <!-- F. Wave badge: a smooth signal riding the curve of the planet, fading as it goes over the horizon. -->
+  <symbol id="sw-wave" viewBox="0 0 64 64">
+    <clipPath id="sw-wave-clip"><circle cx="32" cy="32" r="30"/></clipPath>
+    <g clip-path="url(#sw-wave-clip)">
+      <rect width="64" height="64" fill="url(#sw-sky)"/>
+      <circle cx="14" cy="100" r="64" fill="#172554"/>
+      <path d="M5 29C7.5 21 8.5 15.6 12 15.6C17 15.6 19 34.1 24 34.1C29 34.1 31 21.2 36 21.2C41 21.2 43 39.1 48 39.1C53 39.1 55 37 59.5 39C62.5 40.4 64.5 46 67 50" fill="none" stroke="#F28500" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+  </symbol>
+
+  <!-- B. S-wave: an S drawn as two signal arcs, the upper one through the sky, the lower one along the earth. -->
+  <symbol id="sw-s" viewBox="0 0 64 64">
+    <path d="M32 32.5A11.5 11.5 0 1 1 22 49" fill="none" stroke="url(#sw-earth)" stroke-width="9" stroke-linecap="round"/>
+    <path d="M42 15.5A11.5 11.5 0 1 0 32 32.5" fill="none" stroke="#F28500" stroke-width="9" stroke-linecap="round"/>
+  </symbol>
+
+</svg>
+
+<main>
+  <h1>Skywave logo</h1>
+  <p class="intro">A skywave is a radio signal that bounces between the ground and the sky to reach the far side of the world. The marks below draw that idea. They're tested large, as an app icon on dark and light home screens, at the real 16&nbsp;px favicon size, and in your top bar.</p>
+
+  <section class="option">
+    <div class="stage"><div class="lockup"><svg><use href="#sw-wave"/></svg><span class="wm">skywave</span></div></div>
+    <div class="facts">
+      <h2>Wave, badge <span class="badge">My pick</span></h2>
+      <p>One smooth signal riding the curve of the planet and fading as it goes over the horizon: a skywave that reads as "wave" first. No sharp points, so it stays calm at small sizes.</p>
+      <div class="sizes">
+        <figure><span class="icon dark" style="width:88px;height:88px"><svg><use href="#sw-wave"/></svg></span><figcaption>Dark</figcaption></figure>
+        <figure><span class="home"><span class="icon light" style="width:68px;height:68px"><svg><use href="#sw-wave"/></svg></span></span><figcaption>Light</figcaption></figure>
+        <figure><svg class="fav"><use href="#sw-wave"/></svg><figcaption>16 px</figcaption></figure>
+        <figure><span class="tab"><svg class="fav"><use href="#sw-wave"/></svg>Skywave</span><figcaption>Tab</figcaption></figure>
+      </div>
+      <div class="bar"><span class="mini"><svg><use href="#sw-wave"/></svg><span class="wm">skywave</span></span></div>
+    </div>
+  </section>
+  <section class="option">
+    <div class="stage"><div class="lockup"><svg><use href="#sw-badge"/></svg><span class="wm">skywave</span></div></div>
+    <div class="facts">
+      <h2>Bounce, badge</h2>
+      <p>A skywave drawn literally: the signal bounces between sky and ground in shrinking hops and disappears over the curve of the planet, so it reads as reaching somewhere far away. The round badge keeps one solid shape at every size.</p>
+      <div class="sizes">
+        <figure><span class="icon dark" style="width:88px;height:88px"><svg><use href="#sw-badge"/></svg></span><figcaption>Dark</figcaption></figure>
+        <figure><span class="home"><span class="icon light" style="width:68px;height:68px"><svg><use href="#sw-badge"/></svg></span></span><figcaption>Light</figcaption></figure>
+        <figure><svg class="fav"><use href="#sw-badge"/></svg><figcaption>16 px</figcaption></figure>
+        <figure><span class="tab"><svg class="fav"><use href="#sw-badge"/></svg>Skywave</span><figcaption>Tab</figcaption></figure>
+      </div>
+      <div class="bar"><span class="mini"><svg><use href="#sw-badge"/></svg><span class="wm">skywave</span></span></div>
+    </div>
+  </section>
+  <section class="option">
+    <div class="stage"><div class="lockup"><svg><use href="#sw-s"/></svg><span class="wm">skywave</span></div></div>
+    <div class="facts">
+      <h2>S-wave</h2>
+      <p>A monogram: the S is two signal arcs, tangerine through the sky and blue along the earth. Clean, but closer to a generic letter mark.</p>
+      <div class="sizes">
+        <figure><span class="icon dark" style="width:88px;height:88px"><svg><use href="#sw-s"/></svg></span><figcaption>Dark</figcaption></figure>
+        <figure><span class="home"><span class="icon light" style="width:68px;height:68px"><svg><use href="#sw-s"/></svg></span></span><figcaption>Light</figcaption></figure>
+        <figure><svg class="fav"><use href="#sw-s"/></svg><figcaption>16 px</figcaption></figure>
+        <figure><span class="tab"><svg class="fav"><use href="#sw-s"/></svg>Skywave</span><figcaption>Tab</figcaption></figure>
+      </div>
+      <div class="bar"><span class="mini"><svg><use href="#sw-s"/></svg><span class="wm">skywave</span></span></div>
+    </div>
+  </section>
+</main>
+</body>
+</html>
