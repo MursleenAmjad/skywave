@@ -15,7 +15,6 @@
     autoBatch: 12,
     autoRounds: 3,
     probeTimeoutMs: 6000,
-    expandAllBelow: 120,
     searchLimit: 300,
     railSize: 18,
   };
@@ -374,15 +373,11 @@
     state.channels = channels;
     state.byKey = new Map(channels.map((c) => [c.key, c]));
     state.groups = groupChannels(channels, groupMode() === 'country');
-    if (fresh && selection.worldwide) {
-      // Only the viewer's own country (sorted first) opens: other groups grow to thousands once the full list arrives.
-      state.expanded = new Set(state.groups.slice(0, 1).map((g) => g.key));
-    } else if (fresh) {
-      state.expanded = new Set(
-        channels.length <= CONFIG.expandAllBelow ? state.groups.map((g) => g.key) : state.groups.slice(0, 2).map((g) => g.key),
-      );
+    // One category open at a time: the playing channel's, otherwise the first (in Worldwide, the viewer's own country).
+    const currentGroup = state.current && state.byKey.has(state.current.key) ? groupKeyOf(state.current) : null;
+    if (fresh || currentGroup) {
+      state.expanded = new Set([currentGroup || (state.groups[0] && state.groups[0].key)].filter(Boolean));
     }
-    if (state.current && state.byKey.has(state.current.key)) state.expanded.add(groupKeyOf(state.current));
   }
 
   function setGroupBy(mode) {
@@ -651,12 +646,20 @@
     const list = section.querySelector('.grp-list');
     const open = !state.expanded.has(group.key);
     if (open) {
-      state.expanded.add(group.key);
+      // One category at a time: opening this one closes the other, and drops its rows from the page
+      // (a Worldwide country can hold thousands; they render again on reopen).
+      el.list.querySelectorAll('.grp-head[aria-expanded="true"]').forEach((other) => {
+        other.setAttribute('aria-expanded', 'false');
+        other.nextElementSibling.textContent = '';
+      });
+      state.expanded = new Set([group.key]);
       if (!list.childElementCount) list.innerHTML = group.items.map(channelItem).join('');
     } else {
       state.expanded.delete(group.key);
     }
     head.setAttribute('aria-expanded', String(open));
+    // Closing a long group above can push this header off screen.
+    head.scrollIntoView({ block: 'nearest' });
   }
 
   function markActive() {
@@ -943,7 +946,7 @@
     if (!automatic) document.title = `${ch.name} · ${CONFIG.siteName}`;
     if (state.byKey.has(ch.key)) {
       // Open the channel's group so it is visible in the list, now or once the search is cleared.
-      if (state.query || state.view !== 'all') state.expanded.add(groupKeyOf(ch));
+      if (state.query || state.view !== 'all') state.expanded = new Set([groupKeyOf(ch)]);
       else revealCurrent();
     }
     if (mobile.matches && !automatic) setDrawer(false);
